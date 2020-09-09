@@ -30,7 +30,6 @@ main {
 
   .main-slider {
     width: 50%;
-    overflow: visible;
     @include flexbox();
 
     .swiper-slide {

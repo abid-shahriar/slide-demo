@@ -34,7 +34,6 @@ main {
 
 main .main-slider {
   width: 50%;
-  overflow: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
