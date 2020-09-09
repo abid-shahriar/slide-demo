@@ -1,0 +1,119 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: linear-gradient(120deg, #444, #111);
+  min-height: 100vh;
+}
+
+@mixin flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%transition_all_03s {
+  transition: all 0.3s ease;
+}
+%backface_visibility_hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+main {
+  @include flexbox();
+  align-items: flex-start;
+
+  .main-slider {
+    width: 50%;
+    overflow: visible;
+    @include flexbox();
+
+    .swiper-slide {
+      border: 2px solid white;
+    }
+
+    figure {
+      display: none;
+    }
+  }
+
+  .nav-slider {
+    width: 50%;
+    .swiper-slide {
+      border: 2px solid white;
+      @include flexbox();
+    }
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100vh;
+  transition: opacity 0.6s ease, transform 0.3s ease;
+
+  &.nav-slider {
+    height: 100%;
+
+    .swiper-slide {
+      height: 100vh;
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+
+      &.swiper-slide-active {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .content {
+        width: 100%;
+        .title {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.swiper-slide {
+  height: 100vh;
+  overflow: hidden;
+  @include flexbox();
+  @extend %backface_visibility_hidden;
+  .slide-bgimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .entity-img {
+    display: none;
+  }
+  .content {
+    width: 100%;
+    padding: 10%;
+    color: #fff;
+
+    .title {
+      font-size: 2.6em;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .caption {
+      display: block;
+      font-size: 13px;
+      line-height: 1.4;
+      transition: opacity 0.3s ease, transform 0.7s ease;
+    }
+  }
+}
+
+.swiper-pagination {
+  color: white;
+}
