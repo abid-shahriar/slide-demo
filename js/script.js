@@ -19,8 +19,8 @@ let mainSliderOptions = {
     type: "fraction",
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".down-arrow",
+    prevEl: ".up-arrow",
   },
   on: {
     init: function () {
@@ -82,7 +82,12 @@ navSlider.controller.control = mainSlider;
 
 // footer
 const lastSlide = document.querySelector(".overley-5");
+const firstSlide = document.querySelector(".overley-1");
 const footer = document.querySelector(".footer");
+const main = document.querySelector(".main");
+const header = document.querySelector(".header");
+const upBtn = document.querySelector(".up-arrow");
+const downBtn = document.querySelector(".down-arrow");
 
 window.addEventListener("wheel", (e) => {
   if (lastSlide.classList.contains("swiper-slide-next")) {
@@ -93,6 +98,28 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
-// if (lastSlide.classList.contains("swiper-slide-next")) {
-//   footer.classList.add("visible");
-// }
+window.addEventListener("wheel", (e) => {
+  if (e.deltaY === 100) {
+    // header.style.height = "0px";
+    // header.style.overflow = "hidden";
+    header.classList.add("hide");
+  }
+
+  if (
+    (e.deltaY === -100) &
+    firstSlide.classList.contains("swiper-slide-active")
+  ) {
+    // header.style.height = "100vh";
+    header.classList.remove("hide");
+  }
+});
+
+window.addEventListener("wheel", (e) => {
+  if (header.classList.contains("hide")) {
+    upBtn.style.opacity = "1";
+    downBtn.style.opacity = "1";
+  } else {
+    upBtn.style.opacity = "0";
+    downBtn.style.opacity = "0";
+  }
+});
