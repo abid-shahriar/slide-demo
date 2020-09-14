@@ -9,7 +9,6 @@
 
 body {
   background-image: linear-gradient(120deg, #444, #111);
-  min-height: 100vh;
 }
 
 a {
@@ -120,8 +119,7 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  height: 100vh;
 }
 
 main .main-slider {
@@ -263,6 +261,7 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 0;
+  overflow: hidden;
   opacity: 0;
   pointer-events: none;
   -webkit-transform: translateY(100%);
