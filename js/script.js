@@ -6,8 +6,11 @@ let mainSliderSelector = ".main-slider",
 // Main Slider
 let mainSliderOptions = {
   loop: false,
+  mousewheelReleaseOnEdges: true,
   speed: 1000,
-  mousewheel: true,
+  mousewheel: {
+    releaseOnEdges: true,
+  },
   direction: "vertical",
   loopAdditionalSlides: 10,
   watchSlidesProgress: true,
@@ -32,9 +35,9 @@ let mainSliderOptions = {
       for (let i = 0; i < captions.length; ++i) {
         captions[i].classList.remove("show");
       }
-      swiper.slides[swiper.activeIndex]
-        .querySelector(".caption")
-        .classList.add("show");
+      // swiper.slides[swiper.activeIndex]
+      //   .querySelector(".caption")
+      //   .classList.add("show");
     },
 
     touchStart: function () {
@@ -50,15 +53,18 @@ let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
 // Navigation Slider
 let navSliderOptions = {
   loop: false,
+  mousewheelReleaseOnEdges: true,
   loopAdditionalSlides: 10,
   speed: 1000,
-  spaceBetween: 5,
+  spaceBetween: 0,
   slidesPerView: 1,
   centeredSlides: true,
   touchRatio: 0.2,
   slideToClickedSlide: true,
   direction: "horizontal",
-  mousewheel: true,
+  mousewheel: {
+    releaseOnEdges: true,
+  },
   on: {
     imagesReady: function () {
       this.el.classList.remove("loading");
@@ -73,3 +79,20 @@ let navSlider = new Swiper(navSliderSelector, navSliderOptions);
 // Matching sliders
 mainSlider.controller.control = navSlider;
 navSlider.controller.control = mainSlider;
+
+// footer
+const lastSlide = document.querySelector(".overley-5");
+const footer = document.querySelector(".footer");
+
+window.addEventListener("wheel", (e) => {
+  if (lastSlide.classList.contains("swiper-slide-next")) {
+    footer.classList.remove("visible");
+  }
+  if (lastSlide.classList.contains("swiper-slide-active")) {
+    footer.classList.add("visible");
+  }
+});
+
+// if (lastSlide.classList.contains("swiper-slide-next")) {
+//   footer.classList.add("visible");
+// }

@@ -4,15 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slide Demo</title>
-    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./swiper.min.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Portfolio</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+
     <main>
-      <div class="swiper-container main-slider loading">
-        <div class="swiper-pagination"></div>
+      <!-- <header class="swiper-container header-slide">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
+              ab quae enim quam assumenda fuga fugiat consequatur explicabo
+              deserunt provident officiis porro itaque, tempora laborum
+              excepturi voluptate ex iure adipisci numquam! Suscipit molestiae
+              non recusandae aspernatur accusantium laudantium reiciendis
+              doloribus sunt. Dolore pariatur adipisci reprehenderit tempore
+              omnis distinctio quae hic!
+            </p>
+          </div>
+        </div>
+      </header> -->
+      <div class="swiper-container main-slider loading">
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-wrapper">
+          <!-- <header class="swiper-slide header1">
+            <div class="content-wrapper">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+                autem quia fugit laudantium porro tempore recusandae provident,
+                in obcaecati corporis quis, quisquam itaque voluptatem sapiente
+                possimus vitae praesentium, perferendis quibusdam doloremque
+                hic? Distinctio optio laboriosam natus explicabo, doloribus
+                rerum in corporis velit quaerat ab architecto ullam, laborum
+                aliquid ipsam animi.
+              </p>
+            </div>
+          </header> -->
+          <div class="swiper-slide overley-1">
             <div class="content">
               <p class="title">Shaun Matthews</p>
               <span class="caption"
@@ -22,7 +63,7 @@
               >
             </div>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide overley-2">
             <div class="content">
               <p class="title">Alexis Berry</p>
               <span class="caption"
@@ -32,7 +73,7 @@
               >
             </div>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide overley-3">
             <div class="content">
               <p class="title">Billie Pierce</p>
               <span class="caption"
@@ -42,7 +83,7 @@
               >
             </div>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide overley-4">
             <div class="content">
               <p class="title">Trevor Copeland</p>
               <span class="caption"
@@ -52,7 +93,7 @@
               >
             </div>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide overley-5">
             <div class="content">
               <p class="title">Bernadette Newman</p>
               <span class="caption"
@@ -63,69 +104,59 @@
             </div>
           </div>
         </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev btn prev-btn"></div>
       </div>
 
       <!-- Thumbnail navigation -->
       <div class="swiper-container nav-slider loading">
         <div class="swiper-wrapper" role="navigation">
-          <div class="swiper-slide">
+          <!-- <header class="swiper-slide header2"></header> -->
+          <div class="swiper-slide overley-1">
             <figure
               class="slide-bgimg"
-              style="background-image: url(./img/gal-2.jpg)"
-            >
-              <img src="./img/gal-2.jpg" class="entity-img" />
-            </figure>
-            <!-- <div class="content">
-              <p class="title">Shaun Matthews</p>
-            </div> -->
+              style="background-image: url(./img/img-1.jpg)"
+            ></figure>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide overley-2">
             <figure
               class="slide-bgimg"
-              style="background-image: url(./img/gal-3.jpg)"
-            >
-              <img src="./img/gal-3.jpg" class="entity-img" />
-            </figure>
-            <!-- <div class="content">
-              <p class="title">Alexis Berry</p>
-            </div> -->
+              style="background-image: url(./img/img-2.jpg)"
+            ></figure>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide overley-3">
             <figure
               class="slide-bgimg"
-              style="background-image: url(./img/gal-4.jpg)"
-            >
-              <img src="./img/gal-4.jpg" class="entity-img" />
-            </figure>
-            <!-- <div class="content">
-              <p class="title">Billie Pierce</p>
-            </div> -->
+              style="background-image: url(./img/img-3.jpg)"
+            ></figure>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide overley-4">
             <figure
               class="slide-bgimg"
-              style="background-image: url(./img/gal-5.jpg)"
-            >
-              <img src="./img/gal-5.jpg" class="entity-img" />
-            </figure>
-            <!-- <div class="content">
-              <p class="title">Trevor Copeland</p>
-            </div> -->
+              style="background-image: url(./img/img-4.jpg)"
+            ></figure>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide overley-5">
             <figure
               class="slide-bgimg"
-              style="background-image: url(./img/gal-6.jpg)"
-            >
-              <img src="./img/gal-6.jpg" class="entity-img" />
-            </figure>
-            <!-- <div class="content">
-              <p class="title">Bernadette Newman</p>
-            </div> -->
+              style="background-image: url(./img/img-5.jpg)"
+            ></figure>
           </div>
         </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next btn next-btn"></div>
       </div>
     </main>
+
+    <footer class="footer">
+      <h4>Lorem ipsum dolor sit.</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum autem
+        numquam consequuntur consectetur quo repellendus vel repellat quisquam?
+        Nulla tempora cumque a, nostrum fugiat facilis iure qui aperiam
+        excepturi possimus?
+      </p>
+    </footer>
 
     <!-- js -->
     <script src="./js/swiper.min.js"></script>
