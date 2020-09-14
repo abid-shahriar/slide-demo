@@ -90,7 +90,8 @@ header {
 }
 
 main {
-  background-image: linear-gradient(120deg, #444, #111);
+  background-color: white;
+  color: black;
   @include flexbox();
   align-items: flex-start;
   height: 100vh;
@@ -106,7 +107,7 @@ main {
   .main-slider {
     flex-basis: 50%;
     @include flexbox();
-    margin-left: 4rem;
+    margin-left: 2rem;
 
     figure {
       display: none;
@@ -116,7 +117,7 @@ main {
   .nav-slider {
     flex-basis: 50%;
 
-    margin-right: 4rem;
+    margin-right: 2rem;
     .swiper-slide {
       // border: 2px solid white;
       @include flexbox();
@@ -171,7 +172,6 @@ main {
   .content {
     width: 100%;
     padding: 10%;
-    color: #fff;
 
     .title {
       font-size: 2.6em;
@@ -232,6 +232,10 @@ footer {
   }
 }
 
+.nav-slider:hover .swiper-slide::before {
+  opacity: 0;
+}
+
 .overley-1,
 .overley-2,
 .overley-3,
@@ -243,10 +247,12 @@ footer {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.15;
+    opacity: 0.2;
     top: 0;
     left: 0;
     z-index: 200;
+    transition: opacity 0.3s;
+    cursor: pointer;
   }
 }
 
@@ -280,14 +286,6 @@ footer {
   }
 }
 
-.header1 {
-  width: 200% !important;
-}
-
-.header2 {
-  width: 0% !important;
-}
-
 .btn {
   font-weight: 900;
 }
@@ -301,7 +299,7 @@ footer {
 }
 
 .slide-arrow {
-  color: white;
+  color: black;
   font-size: 45px;
   position: absolute;
   z-index: 1000000;
@@ -311,7 +309,7 @@ footer {
   opacity: 0;
 }
 .up-arrow {
-  left: 10px;
+  left: -10px;
   &::before {
     content: "\2191";
     height: 100%;
@@ -323,7 +321,7 @@ footer {
 }
 
 .down-arrow {
-  right: 10px;
+  right: -10px;
   &::before {
     content: "\2193";
     height: 100%;
