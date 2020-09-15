@@ -7,7 +7,7 @@ let mainSliderSelector = ".main-slider",
 let mainSliderOptions = {
   loop: false,
   mousewheelReleaseOnEdges: true,
-  speed: 1000,
+  speed: 500,
   mousewheel: {
     releaseOnEdges: true,
   },
@@ -55,7 +55,7 @@ let navSliderOptions = {
   loop: false,
   mousewheelReleaseOnEdges: true,
   loopAdditionalSlides: 10,
-  speed: 1000,
+  speed: 500,
   spaceBetween: 0,
   slidesPerView: 1,
   centeredSlides: true,
@@ -100,8 +100,6 @@ window.addEventListener("wheel", (e) => {
 
 window.addEventListener("wheel", (e) => {
   if (e.deltaY === 100) {
-    // header.style.height = "0px";
-    // header.style.overflow = "hidden";
     header.classList.add("hide");
   }
 
@@ -109,7 +107,6 @@ window.addEventListener("wheel", (e) => {
     (e.deltaY === -100) &
     firstSlide.classList.contains("swiper-slide-active")
   ) {
-    // header.style.height = "100vh";
     header.classList.remove("hide");
   }
 });

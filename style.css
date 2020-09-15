@@ -100,13 +100,25 @@ header.hide {
   overflow: hidden;
 }
 
-header .content-wrapper h1 {
-  font-size: 3rem;
+header h1 {
+  font-size: 4rem;
   margin-bottom: 2rem;
 }
 
-header .content-wrapper p {
+@media (max-width: 667px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+header p {
   font-size: 1.5rem;
+}
+
+@media (max-width: 667px) {
+  header p {
+    font-size: 1.2rem;
+  }
 }
 
 .swiper-slide {
@@ -131,13 +143,16 @@ main {
           align-items: flex-start;
   height: 100vh;
   width: 100%;
+  padding: 0 2rem;
 }
 
-main.goTop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
+@media (max-width: 667px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 main .main-slider {
@@ -152,7 +167,12 @@ main .main-slider {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 2rem;
+}
+
+@media (max-width: 667px) {
+  main .main-slider {
+    margin-left: 0rem;
+  }
 }
 
 main .main-slider figure {
@@ -162,7 +182,12 @@ main .main-slider figure {
 main .nav-slider {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  margin-right: 2rem;
+}
+
+@media (max-width: 667px) {
+  main .nav-slider {
+    margin-left: 0rem;
+  }
 }
 
 main .nav-slider .swiper-slide {
@@ -299,7 +324,7 @@ footer {
 }
 
 footer.visible {
-  height: 8rem;
+  height: 6rem;
   opacity: 1;
   pointer-events: all;
   -webkit-transform: translateY(0%);
@@ -381,12 +406,18 @@ footer p {
 .slide-arrow {
   color: black;
   font-size: 45px;
-  position: absolute;
-  z-index: 1000000;
+  position: fixed;
+  z-index: 10000;
   padding: 1rem;
   top: 50%;
   outline: none;
   opacity: 0;
+}
+
+@media (max-width: 667px) {
+  .slide-arrow {
+    opacity: 1;
+  }
 }
 
 .up-arrow {
@@ -413,5 +444,9 @@ footer p {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+.swiper-pagination {
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
