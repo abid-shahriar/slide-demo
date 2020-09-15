@@ -1,98 +1,3 @@
-let dirc;
-
-if (window.innerWidth > 667) {
-  dirc = "horizontal";
-} else {
-  dirc = "vertical";
-}
-
-console.log(dirc);
-
-// Params
-let mainSliderSelector = ".main-slider",
-  navSliderSelector = ".nav-slider",
-  interleaveOffset = 0.5;
-
-// Main Slider
-let mainSliderOptions = {
-  loop: false,
-  touchReleaseOnEdges: true,
-  mousewheelReleaseOnEdges: true,
-  speed: 500,
-  mousewheel: {
-    releaseOnEdges: true,
-  },
-  direction: "vertical",
-  loopAdditionalSlides: 10,
-  watchSlidesProgress: true,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-  },
-  navigation: {
-    nextEl: ".down-arrow",
-    prevEl: ".up-arrow",
-  },
-  on: {
-    init: function () {
-      this.autoplay.stop();
-    },
-    imagesReady: function () {
-      this.el.classList.remove("loading");
-    },
-    slideChangeTransitionEnd: function () {
-      let swiper = this,
-        captions = swiper.el.querySelectorAll(".caption");
-      for (let i = 0; i < captions.length; ++i) {
-        captions[i].classList.remove("show");
-      }
-      // swiper.slides[swiper.activeIndex]
-      //   .querySelector(".caption")
-      //   .classList.add("show");
-    },
-
-    touchStart: function () {
-      let swiper = this;
-      for (let i = 0; i < swiper.slides.length; i++) {
-        swiper.slides[i].style.transition = "";
-      }
-    },
-  },
-};
-let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
-
-// Navigation Slider
-let navSliderOptions = {
-  loop: false,
-  touchReleaseOnEdges: true,
-  edgeSwipeDetection: true,
-  mousewheelReleaseOnEdges: true,
-  loopAdditionalSlides: 10,
-  speed: 500,
-  spaceBetween: 0,
-  slidesPerView: 1,
-  centeredSlides: true,
-  touchRatio: 0.2,
-  slideToClickedSlide: true,
-  direction: dirc,
-  mousewheel: {
-    releaseOnEdges: true,
-  },
-  on: {
-    imagesReady: function () {
-      this.el.classList.remove("loading");
-    },
-    click: function () {
-      mainSlider.autoplay.stop();
-    },
-  },
-};
-let navSlider = new Swiper(navSliderSelector, navSliderOptions);
-
-// Matching sliders
-mainSlider.controller.control = navSlider;
-navSlider.controller.control = mainSlider;
-
 // footer
 const lastSlide = document.querySelector(".overley-5");
 const bothLastSlide = document.querySelectorAll(".overley-5");
@@ -224,4 +129,121 @@ bothLastSlide.forEach((slide) => {
     bothLastTouchendY = e.changedTouches[0].screenY;
     bothLastHandleGesure();
   });
+});
+
+// ---------------------------------------------------------
+const navSlide1 = document.querySelector(".nav-slider .overley-1");
+const navSlide2 = document.querySelector(".nav-slider .overley-2");
+const navSlide3 = document.querySelector(".nav-slider .overley-3");
+const navSlide4 = document.querySelector(".nav-slider .overley-4");
+const navSlide5 = document.querySelector(".nav-slider .overley-5");
+
+// navslide-1
+let nav1TouchstartY = 0;
+let nav1TouchendY = 0;
+
+function nav1HandleGesure() {
+  if (nav1TouchendY < nav1TouchstartY) {
+    navSlider.slideTo(1);
+  }
+  if (nav1TouchendY > nav1TouchstartY) {
+    return;
+  }
+}
+
+navSlide1.addEventListener("touchstart", (e) => {
+  nav1TouchstartY = e.changedTouches[0].screenY;
+});
+
+navSlide1.addEventListener("touchend", (e) => {
+  nav1TouchendY = e.changedTouches[0].screenY;
+  nav1HandleGesure();
+});
+
+// navslide-2
+let nav2TouchstartY = 0;
+let nav2TouchendY = 0;
+
+function nav2HandleGesure() {
+  if (nav2TouchendY < nav2TouchstartY) {
+    navSlider.slideTo(2);
+  }
+  if (nav2TouchendY > nav2TouchstartY) {
+    navSlider.slideTo(0);
+  }
+}
+
+navSlide2.addEventListener("touchstart", (e) => {
+  nav2TouchstartY = e.changedTouches[0].screenY;
+});
+
+navSlide2.addEventListener("touchend", (e) => {
+  nav2TouchendY = e.changedTouches[0].screenY;
+  nav2HandleGesure();
+});
+
+// navslide-3
+let nav3TouchstartY = 0;
+let nav3TouchendY = 0;
+
+function nav3HandleGesure() {
+  if (nav3TouchendY < nav3TouchstartY) {
+    navSlider.slideTo(3);
+  }
+  if (nav3TouchendY > nav3TouchstartY) {
+    navSlider.slideTo(1);
+  }
+}
+
+navSlide3.addEventListener("touchstart", (e) => {
+  nav3TouchstartY = e.changedTouches[0].screenY;
+});
+
+navSlide3.addEventListener("touchend", (e) => {
+  nav3TouchendY = e.changedTouches[0].screenY;
+  nav3HandleGesure();
+});
+
+// navslide-4
+let nav4TouchstartY = 0;
+let nav4TouchendY = 0;
+
+function nav4HandleGesure() {
+  if (nav4TouchendY < nav4TouchstartY) {
+    navSlider.slideTo(4);
+  }
+  if (nav4TouchendY > nav4TouchstartY) {
+    navSlider.slideTo(2);
+  }
+}
+
+navSlide4.addEventListener("touchstart", (e) => {
+  nav4TouchstartY = e.changedTouches[0].screenY;
+});
+
+navSlide4.addEventListener("touchend", (e) => {
+  nav4TouchendY = e.changedTouches[0].screenY;
+  nav4HandleGesure();
+});
+
+// navslide-5
+let nav5TouchstartY = 0;
+let nav5TouchendY = 0;
+
+function nav5HandleGesure() {
+  if (nav5TouchendY < nav5TouchstartY) {
+    return;
+  }
+  if (nav5TouchendY > nav5TouchstartY) {
+    navSlider.slideTo(3);
+  }
+}
+
+navSlide5.addEventListener("touchstart", (e) => {
+  nav5TouchstartY = e.changedTouches[0].screenY;
+});
+
+navSlide5.addEventListener("touchend", (e) => {
+  nav5TouchendY = e.changedTouches[0].screenY;
+  nav5HandleGesure();
 });
