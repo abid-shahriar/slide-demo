@@ -140,8 +140,11 @@ function allNavSlideHandler(e) {
 
 allNavSlides.forEach((navSlide) => {
   navSlide.addEventListener("touchstart", (e) => {
-    e.preventDefault();
     navSlideIndex = navSlider.realIndex;
+
+    if (navSlideIndex !== 4) {
+      e.preventDefault();
+    }
     navTouchstartY = e.changedTouches[0].screenY;
   });
 
