@@ -121,25 +121,56 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
-console.log(header.clientHeight);
+// header.addEventListener("touchmove", (e) => {
+//   header.classList.add("hide");
+//   console.log(e);
+// });
 
-window.addEventListener("scroll", (e) => {
-  const headerHeight = header.clientHeight;
-
-  if (window.pageYOffset > headerHeight / 2) {
-    upBtn.style.opacity = "1";
-    downBtn.style.opacity = "1";
-  } else {
-    upBtn.style.opacity = "0";
-    downBtn.style.opacity = "0";
+header.addEventListener("swiped", function (e) {
+  if (e.detail.dir === "up") {
+    header.classList.add("hide");
   }
 });
 
-window.addEventListener("scroll", (e) => {
-  if (lastSlide.classList.contains("swiper-slide-next")) {
+// first slide gesture
+let firstTouchstartY = 0;
+let firstTouchendY = 0;
+
+function firstHandleGesure() {
+  // if (firstTouchendY < firstTouchstartY) alert("swiped down!");
+  if (firstTouchendY > firstTouchstartY) {
+    header.classList.remove("hide");
+  }
+}
+
+firstSlide.addEventListener("touchstart", (e) => {
+  firstTouchstartY = e.changedTouches[0].screenY;
+});
+
+firstSlide.addEventListener("touchend", (e) => {
+  firstTouchendY = e.changedTouches[0].screenY;
+  firstHandleGesure();
+});
+
+// last slide gesture
+let lastTouchstartY = 0;
+let lastTouchendY = 0;
+
+function lastHandleGesure() {
+  if (lastTouchendY < lastTouchstartY) {
+    footer.classList.add("visible");
+    window.scrollTo(0, 1000);
+  }
+  if (lastTouchendY > lastTouchstartY) {
     footer.classList.remove("visible");
   }
-  if (lastSlide.classList.contains("swiper-slide-active")) {
-    footer.classList.add("visible");
-  }
+}
+
+lastSlide.addEventListener("touchstart", (e) => {
+  lastTouchstartY = e.changedTouches[0].screenY;
+});
+
+lastSlide.addEventListener("touchend", (e) => {
+  lastTouchendY = e.changedTouches[0].screenY;
+  lastHandleGesure();
 });
