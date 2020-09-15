@@ -10,6 +10,7 @@
 body {
   background-image: linear-gradient(120deg, #444, #111);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
