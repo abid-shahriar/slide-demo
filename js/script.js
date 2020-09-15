@@ -120,3 +120,17 @@ window.addEventListener("wheel", (e) => {
     downBtn.style.opacity = "0";
   }
 });
+
+console.log(header.clientHeight);
+
+window.addEventListener("scroll", (e) => {
+  const headerHeight = header.clientHeight;
+
+  if (window.pageYOffset > headerHeight / 2) {
+    upBtn.style.opacity = "1";
+    downBtn.style.opacity = "1";
+  } else {
+    upBtn.style.opacity = "0";
+    downBtn.style.opacity = "0";
+  }
+});

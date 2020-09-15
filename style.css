@@ -414,12 +414,6 @@ footer p {
   opacity: 0;
 }
 
-@media (max-width: 667px) {
-  .slide-arrow {
-    opacity: 1;
-  }
-}
-
 .up-arrow {
   left: -10px;
 }

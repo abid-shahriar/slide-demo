@@ -313,9 +313,9 @@ footer {
   outline: none;
   opacity: 0;
 
-  @media (max-width: 667px) {
-    opacity: 1;
-  }
+  // @media (max-width: 667px) {
+  //   opacity: 1;
+  // }
 }
 .up-arrow {
   left: -10px;
