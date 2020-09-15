@@ -134,3 +134,12 @@ window.addEventListener("scroll", (e) => {
     downBtn.style.opacity = "0";
   }
 });
+
+window.addEventListener("scroll", (e) => {
+  if (lastSlide.classList.contains("swiper-slide-next")) {
+    footer.classList.remove("visible");
+  }
+  if (lastSlide.classList.contains("swiper-slide-active")) {
+    footer.classList.add("visible");
+  }
+});
