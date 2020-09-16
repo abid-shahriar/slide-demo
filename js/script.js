@@ -75,7 +75,6 @@ let lastTouchstartY = 0;
 let lastTouchendY = 0;
 
 function lastHandleGesure() {
-  console.log("blah");
   if (lastTouchendY < lastTouchstartY) {
     footer.classList.add("visible");
   }
