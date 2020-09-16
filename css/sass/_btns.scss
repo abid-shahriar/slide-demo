@@ -1,0 +1,57 @@
+.nav-slider:hover .swiper-slide::before {
+  opacity: 0;
+}
+
+.btn {
+  font-weight: 900;
+}
+
+.prev-btn {
+  margin-left: 1rem;
+}
+
+.next-btn {
+  margin-right: 1rem;
+}
+
+.slide-arrow {
+  color: black;
+  font-size: 45px;
+  position: fixed;
+  z-index: 10000;
+  padding: 1rem;
+  top: 50%;
+  outline: none;
+  opacity: 0;
+
+  // @media (max-width: 667px) {
+  //   opacity: 1;
+  // }
+}
+.up-arrow {
+  left: -10px;
+  &::before {
+    content: "\2191";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+}
+
+.down-arrow {
+  right: -10px;
+  &::before {
+    content: "\2193";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+}
+
+.swiper-pagination {
+  color: black;
+}

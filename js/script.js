@@ -1,26 +1,25 @@
-// footer
-const lastSlide = document.querySelector(".overley-5");
-const bothLastSlide = document.querySelectorAll(".overley-5");
-const boforeLastSlide = document.querySelector(".overley-4");
-const bothBoforeLastSlide = document.querySelectorAll(".overley-4");
-const firstSlide = document.querySelector(".overley-1");
-const bothFirstSlide = document.querySelectorAll(".overley-1");
+// variables
 const footer = document.querySelector(".footer");
 const main = document.querySelector(".main");
 const header = document.querySelector(".header");
 const upBtn = document.querySelector(".up-arrow");
 const downBtn = document.querySelector(".down-arrow");
+const mainSlides = document.querySelectorAll(".main-slider .swiper-slide");
+const navSlides = document.querySelectorAll(".nav-slider .swiper-slide");
 
-window.addEventListener("wheel", (e) => {
-  if (lastSlide.classList.contains("swiper-slide-next")) {
-    footer.classList.remove("visible");
-  }
-  if (lastSlide.classList.contains("swiper-slide-active")) {
-    footer.classList.add("visible");
-  }
-});
+console.log(mainSlides, navSlides);
 
-bothFirstSlide.forEach((firstSlide) => {
+const bothFirstSlides = [mainSlides[0], navSlides[0]];
+const bothBoforeLastSlides = [
+  mainSlides[mainSlides.length - 2],
+  navSlides[navSlides.length - 2],
+];
+const bothLastSlides = [
+  mainSlides[mainSlides.length - 1],
+  navSlides[navSlides.length - 1],
+];
+
+bothFirstSlides.forEach((firstSlide) => {
   firstSlide.addEventListener("wheel", (e) => {
     if (e.deltaY === -100) {
       header.classList.remove("hide");
@@ -60,7 +59,7 @@ function firstHandleGesure() {
   }
 }
 
-bothFirstSlide.forEach((slide) => {
+bothFirstSlides.forEach((slide) => {
   slide.addEventListener("touchstart", (e) => {
     firstTouchstartY = e.changedTouches[0].screenY;
   });
@@ -78,12 +77,13 @@ let lastTouchstartY = 0;
 let lastTouchendY = 0;
 
 function lastHandleGesure() {
+  console.log("blah");
   if (lastTouchendY < lastTouchstartY) {
     footer.classList.add("visible");
   }
 }
 
-bothBoforeLastSlide.forEach((slide) => {
+bothBoforeLastSlides.forEach((slide) => {
   slide.addEventListener("touchstart", (e) => {
     lastTouchstartY = e.changedTouches[0].screenY;
   });
@@ -105,7 +105,7 @@ function bothLastHandleGesure() {
   }
 }
 
-bothLastSlide.forEach((slide) => {
+bothLastSlides.forEach((slide) => {
   slide.addEventListener("touchstart", (e) => {
     bothLastTouchstartY = e.changedTouches[0].screenY;
   });
@@ -117,3 +117,21 @@ bothLastSlide.forEach((slide) => {
 });
 
 // ---------------------------------------------------------
+
+bothLastSlides.forEach((slide) => {
+  slide.addEventListener("wheel", (e) => {
+    if (e.deltaY === 100 && !footer.classList.contains("visible")) {
+      footer.classList.add("visible");
+    }
+    if (e.deltaY === -100 && footer.classList.contains("visible")) {
+      mainSlider.allowSlidePrev = false;
+      navSlider.allowSlidePrev = false;
+      footer.classList.remove("visible");
+
+      setTimeout(() => {
+        mainSlider.allowSlidePrev = true;
+        navSlider.allowSlidePrev = true;
+      }, 500);
+    }
+  });
+});

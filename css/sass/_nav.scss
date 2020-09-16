@@ -1,0 +1,33 @@
+nav {
+  height: 5rem;
+  width: 100%;
+  @include flexbox();
+  justify-content: flex-end;
+  padding: 0 3rem;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(black, 0.7);
+
+  @supports (backdrop-filter: blur()) {
+    background-color: rgba(black, 0.2);
+    backdrop-filter: blur(10px);
+  }
+
+  ul {
+    list-style: none;
+    @include flexbox();
+
+    li {
+      a {
+        color: white;
+        padding: 1rem 1.5rem;
+        font-size: 1.8rem;
+        transition: color 0.25s;
+
+        &:hover {
+          color: orangered;
+        }
+      }
+    }
+  }
+}

@@ -1,22 +1,14 @@
-let dirc;
-
-if (window.innerWidth > 667) {
-  dirc = "horizontal";
-} else {
-  dirc = "horizontal";
-}
-
 // Params
 let mainSliderSelector = ".main-slider",
   navSliderSelector = ".nav-slider",
-  interleaveOffset = 0.5;
+  interleaveOffset = 1;
 
 // Main Slider
 let mainSliderOptions = {
   loop: false,
   touchReleaseOnEdges: true,
   mousewheelReleaseOnEdges: true,
-  speed: 500,
+  speed: 1000,
   mousewheel: {
     releaseOnEdges: true,
   },
@@ -66,13 +58,13 @@ let navSliderOptions = {
   edgeSwipeDetection: true,
   mousewheelReleaseOnEdges: true,
   loopAdditionalSlides: 10,
-  speed: 500,
+  speed: 1000,
   spaceBetween: 0,
   slidesPerView: 1,
   centeredSlides: true,
   touchRatio: 0.2,
   slideToClickedSlide: true,
-  direction: dirc,
+  direction: "horizontal",
   mousewheel: {
     releaseOnEdges: true,
   },

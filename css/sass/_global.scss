@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.bg-red {
+  background-color: rgb(241, 135, 97);
+}
+
+.bg-grey {
+  background-color: grey;
+}
+
+.bg-blue {
+  background-color: skyblue;
+}
+
+.bg-yellowgreen {
+  background-color: rgb(162, 199, 89);
+}
+
+.bg-pink {
+  background-color: pink;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
