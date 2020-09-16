@@ -7,8 +7,6 @@ const downBtn = document.querySelector(".down-arrow");
 const mainSlides = document.querySelectorAll(".main-slider .swiper-slide");
 const navSlides = document.querySelectorAll(".nav-slider .swiper-slide");
 
-console.log(mainSlides, navSlides);
-
 const bothFirstSlides = [mainSlides[0], navSlides[0]];
 const bothBoforeLastSlides = [
   mainSlides[mainSlides.length - 2],
