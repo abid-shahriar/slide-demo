@@ -403,32 +403,23 @@ main .nav-slider .swiper-slide {
   top: 50%;
   outline: none;
   opacity: 0;
+  cursor: pointer;
+}
+
+.slide-arrow i {
+  color: #444;
+}
+
+.slide-arrow i:hover {
+  color: #111;
 }
 
 .up-arrow {
   left: -10px;
 }
 
-.up-arrow::before {
-  content: "\2191";
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-}
-
 .down-arrow {
   right: -10px;
-}
-
-.down-arrow::before {
-  content: "\2193";
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  cursor: pointer;
 }
 
 .swiper-pagination {

@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slide Demo</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/swiper.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -20,6 +27,7 @@
 
     <header class="header">
       <h1>Lorem ipsum dolor sit amet.</h1>
+
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore ab
         quae enim quam assumenda fuga fugiat consequatur explicabo deserunt
@@ -31,7 +39,9 @@
     </header>
 
     <main class="main">
-      <div class="slide-arrow up-arrow"></div>
+      <div class="slide-arrow up-arrow">
+        <i class="fas fa-long-arrow-alt-up"></i>
+      </div>
       <div class="swiper-container main-slider loading">
         <div class="swiper-wrapper">
           <div class="swiper-slide bg-yellowgreen">
@@ -142,7 +152,9 @@
           </div>
         </div>
       </div>
-      <div class="slide-arrow down-arrow"></div>
+      <div class="slide-arrow down-arrow">
+        <i class="fas fa-long-arrow-alt-down"></i>
+      </div>
     </main>
 
     <footer class="footer">
@@ -154,13 +166,18 @@
     </footer>
 
     <!-- js -->
-
     <script src="./js/swiper.min.js"></script>
     <script src="./js/swiped.min.js"></script>
     <script src="./js/swiper.custom.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/firefox-fixes.js"></script>
     <script src="./js/nav-slider.js"></script>
 
-    <!-- <script src="./js/main.js"></script> -->
+    <!-- fontawesome cdn -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js"
+      integrity="sha512-i3N2a3sMtKOQHXCJF3qEpce5twcGN9mRsWQe6PUTf9WS/eG5XkivI97uxit7B2nRGz5XuoszBaqndSqxdeVfag=="
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -23,6 +23,13 @@
   top: 50%;
   outline: none;
   opacity: 0;
+  cursor: pointer;
+  i {
+    color: #444;
+    &:hover {
+      color: #111;
+    }
+  }
 
   // @media (max-width: 667px) {
   //   opacity: 1;
@@ -30,26 +37,26 @@
 }
 .up-arrow {
   left: -10px;
-  &::before {
-    content: "\2191";
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-  }
+  // &::before {
+  //   content: "\2191";
+  //   height: 100%;
+  //   width: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   cursor: pointer;
+  // }
 }
 
 .down-arrow {
   right: -10px;
-  &::before {
-    content: "\2193";
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-  }
+  // &::before {
+  //   content: "\2193";
+  //   height: 100%;
+  //   width: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   cursor: pointer;
+  // }
 }
 
 .swiper-pagination {
