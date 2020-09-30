@@ -39,3 +39,16 @@ bothLastSlides.forEach((slide) => {
     }
   });
 });
+
+window.addEventListener("DOMMouseScroll", (e) => {
+  if (
+    header.classList.contains("hide") &&
+    !footer.classList.contains("visible")
+  ) {
+    upBtn.style.opacity = "1";
+    downBtn.style.opacity = "1";
+  } else {
+    upBtn.style.opacity = "0";
+    downBtn.style.opacity = "0";
+  }
+});

@@ -406,6 +406,10 @@ main .nav-slider .swiper-slide {
   cursor: pointer;
 }
 
+.slide-arrow img {
+  width: 28%;
+}
+
 .slide-arrow i {
   color: #444;
 }
@@ -415,11 +419,17 @@ main .nav-slider .swiper-slide {
 }
 
 .up-arrow {
-  left: -10px;
+  left: -68px;
+  -webkit-transform: rotate(-90deg) translateX(50%);
+          transform: rotate(-90deg) translateX(50%);
+  top: 50%;
 }
 
 .down-arrow {
-  right: -10px;
+  right: -68px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  top: 50%;
 }
 
 .swiper-pagination {

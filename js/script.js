@@ -32,7 +32,10 @@ header.addEventListener("wheel", (e) => {
 });
 
 window.addEventListener("wheel", (e) => {
-  if (header.classList.contains("hide")) {
+  if (
+    header.classList.contains("hide") &&
+    !footer.classList.contains("visible")
+  ) {
     upBtn.style.opacity = "1";
     downBtn.style.opacity = "1";
   } else {
@@ -132,3 +135,5 @@ bothLastSlides.forEach((slide) => {
     }
   });
 });
+
+// hide arrow when footer is visible

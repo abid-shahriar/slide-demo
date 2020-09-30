@@ -24,6 +24,10 @@
   outline: none;
   opacity: 0;
   cursor: pointer;
+
+  img {
+    width: 28%;
+  }
   i {
     color: #444;
     &:hover {
@@ -36,7 +40,9 @@
   // }
 }
 .up-arrow {
-  left: -10px;
+  left: -68px;
+  transform: rotate(-90deg) translateX(50%);
+  top: 50%;
   // &::before {
   //   content: "\2191";
   //   height: 100%;
@@ -48,7 +54,9 @@
 }
 
 .down-arrow {
-  right: -10px;
+  right: -68px;
+  transform: rotate(90deg);
+  top: 50%;
   // &::before {
   //   content: "\2193";
   //   height: 100%;
