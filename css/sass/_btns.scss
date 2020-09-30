@@ -16,17 +16,15 @@
 
 .slide-arrow {
   color: black;
-  font-size: 45px;
   position: fixed;
   z-index: 10000;
-  padding: 1rem;
   top: 50%;
   outline: none;
   opacity: 0;
   cursor: pointer;
 
   img {
-    width: 28%;
+    width: 38px;
   }
   i {
     color: #444;
@@ -40,7 +38,7 @@
   // }
 }
 .up-arrow {
-  left: -68px;
+  left: 0px;
   transform: rotate(-90deg) translateX(50%);
   top: 50%;
   // &::before {
@@ -54,8 +52,8 @@
 }
 
 .down-arrow {
-  right: -68px;
-  transform: rotate(90deg);
+  right: 0px;
+  transform: rotate(90deg) translateX(-50%);
   top: 50%;
   // &::before {
   //   content: "\2193";

@@ -396,10 +396,8 @@ main .nav-slider .swiper-slide {
 
 .slide-arrow {
   color: black;
-  font-size: 45px;
   position: fixed;
   z-index: 10000;
-  padding: 1rem;
   top: 50%;
   outline: none;
   opacity: 0;
@@ -407,7 +405,7 @@ main .nav-slider .swiper-slide {
 }
 
 .slide-arrow img {
-  width: 28%;
+  width: 38px;
 }
 
 .slide-arrow i {
@@ -419,16 +417,16 @@ main .nav-slider .swiper-slide {
 }
 
 .up-arrow {
-  left: -68px;
+  left: 0px;
   -webkit-transform: rotate(-90deg) translateX(50%);
           transform: rotate(-90deg) translateX(50%);
   top: 50%;
 }
 
 .down-arrow {
-  right: -68px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  right: 0px;
+  -webkit-transform: rotate(90deg) translateX(-50%);
+          transform: rotate(90deg) translateX(-50%);
   top: 50%;
 }
 
